@@ -1,12 +1,16 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import Pages from './pages/pages';
 import { ChakraProvider } from './styles';
+import { QueryProvider } from './api';
+
+import Pages from './pages/pages';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ChakraProvider>
-      <Pages />
+      <QueryProvider>
+        <Pages />
+      </QueryProvider>
     </ChakraProvider>
   </StrictMode>,
 );
